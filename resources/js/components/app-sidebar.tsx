@@ -1,17 +1,36 @@
-import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
-import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
+import { Archive, BookOpen, File, Folder, LayoutGrid, User } from 'lucide-react';
 import AppLogo from './app-logo';
+import { NavUser } from './nav-user';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: '/dashboard',
         icon: LayoutGrid,
+    },
+    {
+        title: 'Data User',
+        href: '/users',
+        icon: User,
+    },
+    {
+        title: 'Data Unit',
+        href: '/units',
+        icon: Archive,
+    },
+    {
+        title: 'Data Sites',
+        href: '/sites',
+        icon: File,
+    },
+    {
+        title: 'Data Role',
+        href: '/roles',
+        icon: File,
     },
 ];
 
@@ -48,7 +67,7 @@ export function AppSidebar() {
             </SidebarContent>
 
             <SidebarFooter>
-                <NavFooter items={footerNavItems} className="mt-auto" />
+                {/* <NavFooter items={foo   terNavItems} className="mt-auto" /> */}
                 <NavUser />
             </SidebarFooter>
         </Sidebar>
